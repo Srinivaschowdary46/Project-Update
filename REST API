@@ -1,0 +1,22 @@
+
+## REST API Test Automation
+Here's an example using RestAssured:
+```
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import org.junit.Test;
+
+public class ApiTest {
+    @Test
+    public void testGetUsers() {
+        RestAssured.given()
+                .contentType(ContentType.JSON)
+                .when()
+                .get("/users")
+                .then()
+                .statusCode(200)
+                .body("size()", greaterThan(0));
+    }
+}
+```
+If you have specific questions about REST API test automation, feel free to ask!
